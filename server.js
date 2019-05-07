@@ -7,7 +7,7 @@ const server = net.createServer((c) => {
   });
   c.on('data', (data) => {
     console.log('Received:', data.toString());
-    const ParserData = Parser(data)
+    const ParserData = Parser(data.toString())
     if(ParserData.VALIDATOR){
       c.send(ParserData.ACK)
     }
