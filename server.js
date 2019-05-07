@@ -9,7 +9,7 @@ const server = net.createServer((c) => {
     console.log('Received:', data.toString());
     const ParserData = Parser(data.toString())
     if(ParserData.VALIDATOR){
-      c.send(ParserData.ACK)
+      c.write(ParserData.ACK)
     }
   })
   c.on('error', (...arg) => {
