@@ -29,7 +29,7 @@ server.listen(3001, () => {
 });
 
 function Parser(data) {
-  if (data.contains('+RESP')) {
+  if (data.includes('+RESP')) {
     let SplitData = data.split(',')
     const ACK = '+SACK:' + SplitData[SplitData.length - 1]
     return {
