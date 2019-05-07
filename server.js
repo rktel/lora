@@ -5,12 +5,12 @@ const server = net.createServer((c) => {
   c.on('end', () => {
     console.log('client disconnected');
   });
-  c.on('data', (data)=>{
+  c.on('data', (data) => {
     console.log('Received:', data.toString());
   })
 });
 server.on('error', (err) => {
-  throw err;
+  console.log('Error: ', err)
 });
 server.listen(3001, () => {
   console.log('server bound, port 3001');
