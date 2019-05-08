@@ -6,7 +6,7 @@ const server = net.createServer((c) => {
     console.log('client disconnected');
   });
   c.on('data', (data) => {
-    console.log('Received:', data.toString());
+    console.log('Received', new Date().toISOString(),": ",data.toString());
     const ParserData = Parser(data.toString())
     if(ParserData.VALIDATOR){
       c.write(ParserData.ACK)
